@@ -9,8 +9,9 @@ namespace MediaPlayer.Infrastructure
     {
        private List<User> users=new();
 
-        public void AddUser(User user)
+        public void AddUser(string username,string email,string password)
         {
+            var user = new User(username, email, password);
             users.Add(user);
         }
 
@@ -24,10 +25,10 @@ namespace MediaPlayer.Infrastructure
             return users;
         }
 
-        public User GetUser(User user)
-        {
-            throw new NotImplementedException();
-        }
+          public User GetUserByEmail(string email)
+          {
+          return users.FirstOrDefault(user => user.Email == email);
+            }   
 
         public void UpdateUser(User user)
         {

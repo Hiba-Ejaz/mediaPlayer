@@ -12,6 +12,7 @@ namespace MediaPlayer.Domain
        Title=title;
         Duration=duration;
        Genre=genre;
+       isPlaying=false;
         }
  
         public int MediaId { get; set; }
@@ -20,6 +21,7 @@ namespace MediaPlayer.Domain
         public string Duration { get; set; }
         public string status { get; set; }
         public string Genre { get; set; }
+        public bool isPlaying { get; set; }
 
     }
 }

@@ -7,9 +7,12 @@ namespace MediaPlayer.Application
     public class UserRepositoryService : IUsersManagementService
     {
         private IUserRepository _userRepository;
-        public void AddUser(User user)
+       public UserRepositoryService(IUserRepository userRepository){
+        _userRepository=userRepository;
+        }
+        public void AddUser(string username,string email,string password)
         {
-            _userRepository.AddUser(user);
+            _userRepository.AddUser(username,email,password);
         }
 
         public void DeleteUser(User user)
@@ -22,9 +25,9 @@ namespace MediaPlayer.Application
             return _userRepository.GetAllUsers();
         }
 
-        public User GetUser(User user)
+        public User GetUserByEmail(string email)
         {
-           return _userRepository.GetUser(user);
+           return _userRepository.GetUserByEmail(email);
         }
 
         public void UpdateUser(User user)

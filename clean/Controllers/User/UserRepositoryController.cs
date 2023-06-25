@@ -10,14 +10,14 @@ namespace MediaPlayer.Controller
     public UserRepositoryController(IUsersManagementService usersManagementService){
          _usersManagementService=usersManagementService;
     }
-   public void AddUser(User user){
-    _usersManagementService.AddUser(user);
+   public void AddUser(string username,string email,string password){
+    _usersManagementService.AddUser(username,email,password);
     }
     public void DeleteUser(User user){
     _usersManagementService.DeleteUser(user);
     }
-     public User GetUser(User user){
-    return _usersManagementService.GetUser(user);
+     public User GetUserByEmail(string email){
+    return _usersManagementService.GetUserByEmail(email);
     }
      public IEnumerable<User> GetAllUsers(){
     return  _usersManagementService.GetAllUsers();

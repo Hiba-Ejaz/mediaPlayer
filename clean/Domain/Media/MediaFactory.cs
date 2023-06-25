@@ -1,6 +1,6 @@
 namespace MediaPlayer.Domain
 {
-    public class MediaFactory
+    public class MediaFactory:IMediaFactory
     {
         public MediaFile CreateMedia(int mediaId, string title, string duration, string genre, MediaType type, int? bitrate, int? resolution)
         {

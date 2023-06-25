@@ -5,7 +5,7 @@ namespace MediaPlayer.Application{
     public class MediaManagementServices : IMediaManagementService
     {
         private readonly IMediaRepository _mediaRepository;
-        private MediaFactory _mediaFactory;
+        private IMediaFactory _mediaFactory;
         public MediaManagementServices(IMediaRepository mediaRepository){
         _mediaRepository=mediaRepository;
         _mediaFactory=new MediaFactory();

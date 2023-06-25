@@ -13,7 +13,15 @@ namespace MediaPlayer
             var mediaRepository = new MediaFileRepository();
             var mediaManagementServices = new MediaManagementServices(mediaRepository);
             var mediaFileRepositoryController = new MediaFileRepositoryController(mediaManagementServices);
-             mediaFileRepositoryController.AddMediaFile(1, "Sample Media", "00:05:30", "Action",MediaType.Video, null, 1080);
+            mediaFileRepositoryController.AddMediaFile(1, "Sample Media", "00:05:30", "Action",MediaType.Video, null, 1080);
+
+            var userRepository = new UsersRepository();
+            var userRepositoryService = new UserRepositoryService(userRepository);
+            var userRepositoryController = new UserRepositoryController(userRepositoryService);
+            userRepositoryController.AddUser("hiba","hiba@gmail.com","hiba1234");
+
+           User userByEmail = userRepositoryController.GetUserByEmail("hiba@gmail.com");
+            Console.WriteLine($"Username: {userByEmail.Username}, UserEmail: {userByEmail.Email}");
 
            IEnumerable<MediaFile> allMediaFiles =  mediaFileRepositoryController.GetAllMediaFiles();
            foreach (MediaFile mediaFile in allMediaFiles)

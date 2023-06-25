@@ -2,9 +2,11 @@
 namespace MediaPlayer.Domain{
     public class User
     {
-       private string _username;
-       private string _email;
-       private string _password;
+       public User(string username,String email,String password){
+        Username=username;
+        Email=email;
+        Password=password;
+       }
 
         public string Username { get; set; }
         public string Email { get; set; }
