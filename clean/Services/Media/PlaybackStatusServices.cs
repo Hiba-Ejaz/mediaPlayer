@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace fs15_14-MediaPlayer.clean.Services
+namespace MediaPlayer.Application
 {
-    public class MediaControlServices
+    public class PlaybackStatus
     {
         
     }

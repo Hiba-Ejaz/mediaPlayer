@@ -1,6 +1,5 @@
 
-namespace MediaPlayer
-{
+namespace MediaPlayer.Domain{
     public class User
     {
        private string _username;

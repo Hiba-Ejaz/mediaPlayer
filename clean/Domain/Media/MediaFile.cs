@@ -3,20 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MediaPlayer
+namespace MediaPlayer.Domain
 {
-    public class MediaFile
+    public abstract class MediaFile
     {
-        private int _mediaId;
-        private string _title;
-        private string _filetype;
-        private string _duration;
-        private string _genre;
-
+        public MediaFile(int mediaId,string title,string duration,string genre){
+       MediaId =mediaId;
+       Title=title;
+        Duration=duration;
+       Genre=genre;
+        }
+ 
         public int MediaId { get; set; }
         public string Title { get; set; }
         public string Filetype { get; set; }
         public string Duration { get; set; }
+        public string status { get; set; }
         public string Genre { get; set; }
 
     }

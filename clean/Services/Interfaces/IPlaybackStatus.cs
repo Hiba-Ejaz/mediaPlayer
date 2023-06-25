@@ -1,6 +1,6 @@
 
 
-namespace MediaPlayer
+namespace MediaPlayer.Application
 {
     public interface IPlaybackStatus
     {

@@ -8,16 +8,16 @@ The media player application is a robust software that meets the requirements by
 
 1. Playback Functionality:
 
-- Users should be able to play audio and video files.
-- Provide controls for play, pause, stop, and seek functionality.
-- Display the current playback status, such as the current position and duration.
+- Users should be able to play audio and video files.//user class and actions Interface
+- Provide controls for play, pause, stop, and seek functionality.//media class and media Interface
+- Display the current playback status, such as the current position and duration.//features for user class 
 
 2. Media Management:
 
-- Users should be able to manage their media library, including adding, removing, and organizing media files.
+- Users should be able to manage their media library, including adding, removing, and organizing media files. // library =>? user
 - Implement features to manage playlists.
 
-3. Command-Line Interface:
+1. Command-Line Interface:
 
 - Design a user-friendly command-line interface that allows users to navigate and interact with the application.
 - Provide clear instructions and feedback to guide users through different operations.
