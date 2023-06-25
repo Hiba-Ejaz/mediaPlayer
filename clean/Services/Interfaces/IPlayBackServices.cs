@@ -5,7 +5,7 @@
 using MediaPlayer.Domain;
 
 namespace MediaPlayer.Application{
-    public interface IMediaControl
+    public interface IPlayBackServices
     {
         void playMedia( MediaFile media);
         void pauseMedia(MediaFile media);

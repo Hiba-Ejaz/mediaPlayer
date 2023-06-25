@@ -7,8 +7,10 @@ namespace MediaPlayer.Application
     public class UserRepositoryService : IUsersManagementService
     {
         private IUserRepository _userRepository;
-       public UserRepositoryService(IUserRepository userRepository){
+        private IPlayBackServices _MediaPlayBackServices;
+       public UserRepositoryService(IUserRepository userRepository,IPlayBackServices mediaPlayBackServices){
         _userRepository=userRepository;
+        _MediaPlayBackServices=mediaPlayBackServices;
         }
         public void AddUser(string username,string email,string password)
         {
@@ -33,6 +35,18 @@ namespace MediaPlayer.Application
         public void UpdateUser(User user)
         {
             throw new NotImplementedException();
+        }
+        void playMedia( MediaFile media){
+           _MediaPlayBackServices.playMedia(media); 
+        }
+        void pauseMedia(MediaFile media){
+            _MediaPlayBackServices.pauseMedia(media);
+        }
+        void stopMedia(MediaFile media){
+        _MediaPlayBackServices.stopMedia(media);
+        }
+        void seekMedia(MediaFile media){
+
         }
     }
 }

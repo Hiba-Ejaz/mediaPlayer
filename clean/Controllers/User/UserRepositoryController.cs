@@ -7,6 +7,7 @@ namespace MediaPlayer.Controller
     public class UserRepositoryController
     {
      private IUsersManagementService _usersManagementService;
+     
     public UserRepositoryController(IUsersManagementService usersManagementService){
          _usersManagementService=usersManagementService;
     }

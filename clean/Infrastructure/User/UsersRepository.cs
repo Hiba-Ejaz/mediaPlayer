@@ -8,7 +8,7 @@ namespace MediaPlayer.Infrastructure
     public class UsersRepository:IUserRepository
     {
        private List<User> users=new();
-
+    
         public void AddUser(string username,string email,string password)
         {
             var user = new User(username, email, password);
@@ -34,5 +34,6 @@ namespace MediaPlayer.Infrastructure
         {
             throw new NotImplementedException();
         }
+
     }
 }
