@@ -1,13 +1,14 @@
 
-using MediaPlayer.Domain;
-
-namespace MediaPlayer.clean.Domain.PlayList
+namespace MediaPlayer.Domain
 {
     public class PlayList
     {
-        List<MediaFile> playList = new();
-        public string PlayListTitle{set;get;}
-        
-
+        public string PlayListTitle { set; get; }
+        public List<MediaFile> MediaFiles { get; set; }
+        public PlayList(string title)
+        {
+            PlayListTitle = title;
+            MediaFiles = new List<MediaFile>();
+        }
     }
 }

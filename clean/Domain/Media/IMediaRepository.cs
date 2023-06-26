@@ -5,7 +5,6 @@ namespace MediaPlayer.Domain
     {
         public void AddMediaFile(MediaFile media);
         public MediaFile ReadMediaFile(int mediaId);
-
-         public IEnumerable<MediaFile> GetAllMediaFiles();
+        public IEnumerable<MediaFile> GetAllMediaFiles();
     }
 }

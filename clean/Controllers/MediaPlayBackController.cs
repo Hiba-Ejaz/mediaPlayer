@@ -8,18 +8,22 @@ namespace MediaPlayer.Controller
     public class MediaPlayBackController
     {
         private IPlayBackServices _PlaybackServices;
-    
-        public MediaPlayBackController(IPlayBackServices playbackServices){
-            _PlaybackServices=playbackServices;
+
+        public MediaPlayBackController(IPlayBackServices playbackServices)
+        {
+            _PlaybackServices = playbackServices;
         }
-        public void playMedia( MediaFile media){
+        public void playMedia(MediaFile media)
+        {
             _PlaybackServices.playMedia(media);
         }
-        public void pauseMedia(MediaFile media){
-         _PlaybackServices.pauseMedia(media);
+        public void pauseMedia(MediaFile media)
+        {
+            _PlaybackServices.pauseMedia(media);
         }
-        public void stopMedia(MediaFile media){
-         _PlaybackServices.stopMedia(media);
+        public void stopMedia(MediaFile media)
+        {
+            _PlaybackServices.stopMedia(media);
         }
         // void seekMedia(MediaFile media);
         // {
