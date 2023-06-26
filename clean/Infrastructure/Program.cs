@@ -10,8 +10,8 @@ namespace MediaPlayer
         static void Main()
         {
             var mediaRepository = new MediaFileRepository();
-            var mediaManagementServices = new MediaManagementServices(mediaRepository);
-            var mediaFileRepositoryController = new MediaFileRepositoryController(mediaManagementServices);
+            MediaManagementServices mediaPlayer=MediaManagementServices.GetMediaPlayerInstance(mediaRepository);
+            var mediaFileRepositoryController = new MediaFileRepositoryController(mediaPlayer);
             mediaFileRepositoryController.AddMediaFile(1, "Sample Media", "00:05:30", "Action",MediaType.Video, null, 1080);
             
             var mediaPlayBackServices=new PlayBackServices(mediaRepository);

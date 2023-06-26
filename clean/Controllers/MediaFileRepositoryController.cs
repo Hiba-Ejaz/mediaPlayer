@@ -7,7 +7,7 @@ namespace MediaPlayer.Controller
 {
     public class MediaFileRepositoryController
     {
-        private readonly List<MediaFile> _mediaFiles=new();
+        // private readonly List<MediaFile> _mediaFiles=new();
         private IMediaManagementService _mediaManagementService;
 
         public MediaFileRepositoryController(IMediaManagementService mediaManagementService)
@@ -18,10 +18,9 @@ namespace MediaPlayer.Controller
 
         public void AddMediaFile(int mediaId, string title, string duration, string genre, MediaType type, int? bitrate, int? resolution)
         {
-            Console.WriteLine("add media file in controller"+mediaId);
             _mediaManagementService.AddMediaFile(mediaId, title, duration, genre, type, bitrate, resolution);
-            MediaFile mediaFile = _mediaManagementService.ReadMediaFile(mediaId);
-            _mediaFiles.Add(mediaFile);
+            // MediaFile mediaFile = _mediaManagementService.ReadMediaFile(mediaId);
+            // _mediaFiles.Add(mediaFile);
         }
 
         public MediaFile ReadMediaFile(int mediaId)
@@ -32,7 +31,8 @@ namespace MediaPlayer.Controller
 
         public IEnumerable<MediaFile> GetAllMediaFiles()
         {
-            return _mediaFiles;
+           return _mediaManagementService.GetAllMediaFiles();
+            //return _mediaFiles;
         }
     }
 }
@@ -40,30 +40,3 @@ namespace MediaPlayer.Controller
 
 
 
-// using MediaPlayer.Application;
-// using MediaPlayer.Domain;
-
-// namespace MediaPlayer.Controller
-// {
-//     public class MediaFileRepositoryController
-//     {
-//        // private readonly List<MediaFile> _mediaFiles;
-//        private IMediaManagementService _mediaManagementService;  
-//        public MediaFileRepositoryController(IMediaManagementService mediaManagementService){
-//          _mediaManagementService= mediaManagementService;
-//        }
-//         public void AddMediaFile(int mediaId,string title,string duration,string genre,MediaType type,int? bitrate,int? resolution)
-//         {
-//            _mediaManagementService.AddMediaFile(mediaId, title,duration,genre,type,bitrate,resolution);
-//         }
-//         public MediaFile readMediaFile(int mediaId)
-//         {
-//            return _mediaManagementService.readMediaFile(mediaId);
-//         }
-
-//          public IEnumerable<MediaFile> GetAllMediaFiles()
-//         {
-//             return _mediaManagementService.GetAllMediaFiles();
-//         }
-//     }
-// }

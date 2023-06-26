@@ -5,12 +5,34 @@ namespace MediaPlayer.Application
 {
     public class MediaManagementServices : IMediaManagementService
     {
+        private static MediaManagementServices _MediaPlayerInstance;
+        private static readonly object _lock = new object();
         private readonly IMediaRepository _mediaRepository;
         private IMediaFactory _mediaFactory;
         public MediaManagementServices(IMediaRepository mediaRepository)
         {
             _mediaRepository = mediaRepository;
             _mediaFactory = new MediaFactory();
+        }
+
+        public static MediaManagementServices GetMediaPlayerInstance(IMediaRepository mediaRepository)
+        {
+            if (_MediaPlayerInstance == null)
+            {
+                lock (_lock)
+                {
+                    if (_MediaPlayerInstance == null)
+                    {
+                        _MediaPlayerInstance = new MediaManagementServices(mediaRepository);
+                    }
+                }
+            }
+            else
+            {
+                throw new InvalidOperationException("Singleton instance of media player already exists.");
+            }
+
+            return _MediaPlayerInstance;
         }
         public void AddMediaFile(int mediaId, string title, string duration, string genre, MediaType type, int? bitrate, int? resolution)
         {
